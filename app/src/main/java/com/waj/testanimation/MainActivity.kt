@@ -10,13 +10,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : Activity() {
     private val animations = arrayListOf<Animation>()
+//    private val frames = arrayListOf<>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         initAnimation(this)
         mRvGrid.layoutManager = GridLayoutManager(this,2)
-//        mRvGrid.adapter = GridAdapter
+//        mRvGrid.adapter = GridAdapter(this,animations,frames,texts,images)
     }
 
     private fun initAnimation(context: Context){
@@ -26,7 +27,7 @@ class MainActivity : Activity() {
         animations.add(AnimationUtils.loadAnimation(context,R.anim.anim_alpha)) //透明动画
         animations.add(AnimationUtils.loadAnimation(context,R.anim.anim_all)) //动画合集
 
-        val anim = Rotate3dAnimation(0.0f, 720.0f, 100.0f, 0.0f, false) //自定义动画
+        val anim = Rotate3dAnimation(0f, 720f, 100f, 100f,0f, false) //自定义动画
         anim.duration = 2000
         animations.add(anim)
     }
