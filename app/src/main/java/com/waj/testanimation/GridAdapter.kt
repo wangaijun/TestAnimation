@@ -41,14 +41,12 @@ class GridAdapter(private val context: Context, private val animations: ArrayLis
             }
             7->{
                 holder.btnPlay.text = "包装器模式"
-                ViewWrapper.performWrapperAnimation(holder.img,10,500)
                 holder.btnPlay.setOnClickListener {
                     ViewWrapper.performWrapperAnimation(holder.img,10,500)
                 }
             }
             8->{
                 holder.btnPlay.text = "插值模式"
-                ValueAnimatorWrapper.performListenerAnimator(holder.img,0,800)
                 holder.btnPlay.setOnClickListener {
                     ValueAnimatorWrapper.performListenerAnimator(holder.img,0,800)
                 }

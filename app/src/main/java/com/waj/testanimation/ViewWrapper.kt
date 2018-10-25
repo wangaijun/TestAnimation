@@ -6,7 +6,10 @@ import android.view.View
 class ViewWrapper(val view:View){
     var width:Int
         get() = view.layoutParams.width
-        set(value) {view.layoutParams.width = value}
+        set(value) {
+            view.layoutParams.width = value
+            view.requestLayout()
+        }
 
     companion object {
         fun performWrapperAnimation(view:View, start:Int, end:Int){
