@@ -9,9 +9,11 @@ class ViewWrapper(val view:View){
         set(value) {view.layoutParams.width = value}
 
     companion object {
-        public fun performWrapperAnimation(view:View, start:Int, end:Int){
+        fun performWrapperAnimation(view:View, start:Int, end:Int){
             val vm = ViewWrapper(view)
-            ObjectAnimator.ofInt(vm,"width",start,end)
+            val animator = ObjectAnimator.ofInt(vm,"width",start,end)
+            animator.duration = 2000
+            animator.start()
         }
     }
 }
