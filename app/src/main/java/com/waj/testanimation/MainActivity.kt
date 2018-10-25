@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : Activity() {
     private val animations = arrayListOf<Animation>()
-//    private val frames = arrayListOf<>()
+    private val frame = R.anim.anim_images
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,7 +19,7 @@ class MainActivity : Activity() {
 
         mRvGrid.layoutManager = GridLayoutManager(this,2)
 
-        mRvGrid.adapter = GridAdapter(this,animations)
+        mRvGrid.adapter = GridAdapter(this,animations, frame)
 
         btnPlay.setOnClickListener {
             ViewWrapper.performWrapperAnimation(img,10,500)
