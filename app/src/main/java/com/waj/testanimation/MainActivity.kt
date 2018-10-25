@@ -3,7 +3,6 @@ package com.waj.testanimation
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,8 +15,10 @@ class MainActivity : Activity() {
         setContentView(R.layout.activity_main)
 
         initAnimation(this)
-        mRvGrid.layoutManager = GridLayoutManager(this,2)
-//        mRvGrid.adapter = GridAdapter(this,animations,frames,texts,images)
+
+        btnPlay.setOnClickListener {
+            ViewWrapper.performWrapperAnimation(img,10,500)
+        }
     }
 
     private fun initAnimation(context: Context){

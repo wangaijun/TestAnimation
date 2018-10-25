@@ -3,6 +3,15 @@
     android:oneshot="false">
     <!-- 循环显示三个图片 -->
     <item
-        android:drawable="@drawable/"
+        android:drawable="@drawable/p1"
+        android:duration="250"
+    />
+    <item
+            android:drawable="@drawable/p2"
+            android:duration="250"
+    />
+    <item
+            android:drawable="@drawable/p3"
+            android:duration="250"
     />
 </animation-list>
