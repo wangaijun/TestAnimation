@@ -9,7 +9,7 @@
             android:src="@drawable/p1"
     />
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:id="@+id/btnPlay" android:text="播放动画"
+        android:id="@+id/btnPlay" android:text="播放动画" android:layout_gravity="center_horizontal"
     />
 
 </LinearLayout>
