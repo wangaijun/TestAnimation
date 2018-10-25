@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
+import android.widget.Button
 import android.widget.ImageView
 
 class GridAdapter(private val context: Context, private val animations: ArrayList<Animation>
@@ -24,18 +25,28 @@ class GridAdapter(private val context: Context, private val animations: ArrayLis
         when(position){
             in animations.indices->{
                 val animation = animations[position]
-                holder.img.startAnimation(animation )
+                holder.btnPlay.setOnClickListener {
+                    holder.img.startAnimation(animation )
+                }
             }
             6->{
                 holder.img.setImageResource(frame)
-                val drawable = holder.img.drawable as AnimationDrawable
-                drawable.start()
+                holder.btnPlay.setOnClickListener {
+                    val drawable = holder.img.drawable as AnimationDrawable
+                    drawable.start()
+                }
             }
             7->{
                 ViewWrapper.performWrapperAnimation(holder.img,10,500)
+                holder.btnPlay.setOnClickListener {
+                    ViewWrapper.performWrapperAnimation(holder.img,10,500)
+                }
             }
             8->{
                 ValueAnimatorWrapper.performListenerAnimator(holder.img,0,800)
+                holder.btnPlay.setOnClickListener {
+                    ValueAnimatorWrapper.performListenerAnimator(holder.img,0,800)
+                }
             }
         }
 
@@ -45,4 +56,5 @@ class GridAdapter(private val context: Context, private val animations: ArrayLis
 
 class Holder(itemView: View) : RecyclerView.ViewHolder(itemView){
     val img = itemView.findViewById<ImageView>(R.id.imgItem)
+    val btnPlay = itemView.findViewById<Button>(R.id.btnPlay)
 }

@@ -8,12 +8,6 @@
         tools:context=".MainActivity"
         android:orientation="vertical"
 >
-    <Button android:id="@+id/btnPlay" android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:text="播放动画"/>
-    <ImageView android:id="@+id/img" android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:src="@drawable/p1"/>
-
-
     <android.support.v7.widget.RecyclerView
             android:id="@+id/mRvGrid"
             android:layout_width="match_parent"
